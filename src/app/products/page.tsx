@@ -1,7 +1,6 @@
 import React from 'react';
 import ProductCard from "@/app/components/ProductCard/ProductCard";
 import {Metadata} from "next";
-
 export const metadata: Metadata = {
     title: 'Products',
     description: 'Something about products',
@@ -28,13 +27,14 @@ const handleAddProducts = async () => {
 };
 
 const getProducts = async () => {
-    const res = await fetch('https://js-course-18-c9943-default-rtdb.europe-west1.firebasedatabase.app/dishes.json',  { cache: 'no-store' });
+    const res = await fetch('https://js-course-18-c9943-default-rtdb.europe-west1.firebasedatabase.app/dishes.json', { next: { tags: ['collection'] } });
     const json = await res.json();
     if (!res.ok) {
         throw new Error('Failed')
     }
     return Object.entries(json).map(([key, value]) => ({id: key, ...value}));
 };
+
 
 const Products = async () => {
 
