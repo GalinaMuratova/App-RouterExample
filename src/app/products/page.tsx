@@ -4,7 +4,7 @@ import {Metadata} from "next";
 import actions from "@/lib/actions";
 import AddProductButton from "@/components/UI/AddProductButton/AddProductButton";
 export const metadata: Metadata = {
-    title: 'Products',
+    title: `Products`,
     description: 'Something about products',
 }
 

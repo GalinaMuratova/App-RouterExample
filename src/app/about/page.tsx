@@ -2,7 +2,7 @@ import React from 'react';
 import {Metadata} from "next";
 
 export const metadata: Metadata = {
-    title: 'About',
+    title: `About`,
     description: 'Something about us',
 }
 const About = async () => {
