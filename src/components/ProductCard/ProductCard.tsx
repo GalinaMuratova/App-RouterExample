@@ -3,7 +3,8 @@
 import React from 'react';
 import Image from "next/image";
 import './ProductCard.css';
-import {handleDeleteProduct, handleUpdateAllProduct, handleUpdateProduct} from "@/app/functions";
+import {handleDeleteProduct, handleUpdateAllProduct, handleUpdateProduct} from "@/lib/functions";
+import Link from "next/link";
 
 interface Props {
     id: string
@@ -17,7 +18,9 @@ const ProductCard: React.FC<Props> = ({title, price,image, id}) => {
     return (
         <div className='card'>
             <div className='imageContainer'>
-                <Image src={image} alt={title} width={250} height={250}/>
+                <Link href={`/products/${id}`}>
+                    <Image src={image} alt={title} width={250} height={250}/>
+                </Link>
             </div>
             <div className='details sm:'>
                 <h5 className='title'>{title}</h5>
